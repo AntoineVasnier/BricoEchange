@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>{% block title %}EniBlog{% endblock %}</title>
+        <link href="{{ asset('css/general.css') }}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="header">
+            {% block header %}
+            <h1>Brico Échange</h1>
+            <div class="clear"></div>
+            <ul class="menu">
+                <li><a href="{{ path('index') }}">Accueil</a></li> 
+                <li><a href="{{ path('ajout')}}">Ajouter une annonce</a></li>               
+                {% if app.user %}
+                    {% if app.user.username == 'admin' %}
+                        <li><a href="{{ path('admin') }}">Administration</a></li>
+                    {% endif %}
+                    <li><a href="{{ path('compte', {'id' : app.user.id}) }}">Mon compte - {{app.user.username}}</a></li>
+                    <li><a href="{{ path('logout')}}">Déconnexion</a></li>
+                {% else %}
+                <li><a href="{{ path('connexion')}}">Connexion</a></li>
+                {% endif %}             
+            </ul>
+            <div class="clear"></div>
+            <hr />
+            {% endblock %}
+        </div>
+        <div class="body">
+            {% block body %}{% endblock %}
+        </div>
+        <br>
+        <div class="footer">
+            {% block footer %}© 2017 Brico Échange - Tous droits réservés{% endblock %}
+        </div>
+    </body>
+</html>

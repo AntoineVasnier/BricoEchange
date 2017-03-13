@@ -1,0 +1,26 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Annonce
+{% endblock %}
+
+{% block body %}
+    <div class="post">
+        <div class="annonce">     
+                <div class='columns'>
+                    <h3>{{annonce.datePublication|date('d/m/Y')}} : {{ annonce.resume|striptags }}</h3>
+                    <div class='column1'>
+                        <img  src="{{ asset('img/' ~ annonce.photo) }}" alt="image de l'annonce" />
+                    </div>
+                    <div>
+                        <p class="content">
+                            <b>Catégorie : </b>{{annonce.categorie.libelle}}<br>
+                            <b>Marque : </b>{{ annonce.marque }}<br>
+                            <b>Lieu : </b>{{ annonce.ville }}<br>
+                            <b>Description : </b>{{ annonce.description }}
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>   
+{% endblock %}

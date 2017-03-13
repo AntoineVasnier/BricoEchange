@@ -1,0 +1,24 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Annonce d'une catégorie
+{% endblock %}
+
+{% block body %}
+    <h2>Voici les annonces de la catégorie {{categorie.libelle|upper}} </h2>
+    {% for annonce in annonces %}            
+        {% if annonce.categorie == categorie %}
+            <div class="post">
+                <div class="annonce">
+                    <a href="{{ path('annonce', {'id' : annonce.id}) }}">
+                        <h3>{{annonce.datePublication|date('d/m/Y')}} : {{ annonce.resume|striptags }}</h3>
+                        <div class='columns'>
+                            <div class='column1'><img  src="{{ asset('img/' ~ annonce.photo) }}" alt="logo" /></div>
+                            <div class='column2'><p class="content">Marque : {{ annonce.marque|upper }}<br>Lieu : {{ annonce.ville|upper }}</p></div>
+                        </div>
+                    </a>
+                </div>
+            </div>   
+        {% endif %}
+    {% endfor %}    
+{% endblock %}

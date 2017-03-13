@@ -1,0 +1,13 @@
+{% block form_row %}
+    <div class="row">
+        <div class="label">
+            {{form_label(form)}}
+        </div>
+        <div class="element">
+            {{form_widget(form)}}
+        </div>
+        <div style="width: auto;color: red;">
+            {{form_errors(form)}}
+        </div>
+    </div>
+{% endblock %} 

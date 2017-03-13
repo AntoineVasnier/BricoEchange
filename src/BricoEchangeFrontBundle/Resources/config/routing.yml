@@ -1,0 +1,76 @@
+index:
+    path:     /
+    defaults: { _controller: BricoEchangeFrontBundle:Default:index }
+    
+creerCompte:
+    path:     /creerCompte
+    defaults: { _controller: BricoEchangeFrontBundle:Default:creerCompte }
+    
+connexion:
+    path:     /connexion
+    defaults: { _controller: BricoEchangeFrontBundle:Default:connexion }
+    
+compte:
+    path:     /utilisateur/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Default:compte}  
+    
+ajout:
+    path:     /annonce/ajout
+    defaults: { _controller: BricoEchangeFrontBundle:Annonce:ajout }
+    
+annonce:
+    path:     /annonce/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Annonce:view }
+    
+annoncesParCateg:
+    path:     /annonce/categ/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Annonce:categ }  
+    
+admin:
+    path:     /admin
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:index }
+    
+admin_annonce:
+    path:     /admin/annonce
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:annonce }
+
+admin_utilisateur:
+    path:     /admin/utilisateur
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:utilisateur }
+
+modifierUtilisateur:
+    path:     /admin/utilisateur/modif/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:modifierUtilisateur }
+
+supprimerUtilisateur:
+    path:     /admin/utilisateur/supprimer/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:supprimerUtilisateur }
+
+modifierAnnonce:
+    path:     /admin/annonce/modif/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:modifierAnnonce }
+    
+supprimerAnnonce:
+    path:     /admin/annonce/supprimer/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:supprimerAnnonce }
+    
+categorie:
+    path:     /admin/categorie
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:categorie }
+    
+ajoutCategorie:
+    path:     /admin/categorie/ajout
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:ajoutCategorie }
+    
+modifierCategorie:
+    path:     /admin/categorie/modif/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:modifierCategorie }
+    
+supprimerCategorie:
+    path:     /admin/categorie/supprimer/{id}
+    defaults: { _controller: BricoEchangeFrontBundle:Admin:supprimerCategorie }
+    
+logout: 
+    path:     /uneroutebidon
+
+    

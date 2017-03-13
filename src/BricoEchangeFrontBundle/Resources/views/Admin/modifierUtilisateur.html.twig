@@ -1,0 +1,17 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Modifier
+{% endblock %}
+
+{% block body %}
+    <h2>Modifier un utilisateur : </h2>
+    <hr />
+    <div style="margin: 15px 0">
+    {{ form_start(form)}}
+    {% form_theme form 'BricoEchangeFrontBundle:Annonce:form.html.twig'%}
+    {{form(form)}}
+    {{ form_end(form)}}
+    </div>
+    
+{% endblock %}

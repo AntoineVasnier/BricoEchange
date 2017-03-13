@@ -1,0 +1,17 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Modification catégorie
+{% endblock %}
+
+{% block body %}
+    <h2>Modifier la catégorie :</h2>
+    <hr />
+    <div style="margin: 15px 0">
+    {{ form_start(form)}}
+        {% form_theme form 'BricoEchangeFrontBundle:Admin:formAjoutCategorie.html.twig'%}
+        {{form(form)}}
+    {{ form_end(form)}}
+    </div>
+    
+{% endblock %}

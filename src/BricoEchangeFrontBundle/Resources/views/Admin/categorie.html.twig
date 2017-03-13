@@ -1,0 +1,18 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Admin - Catégories
+{% endblock %}
+
+{% block body %}
+    <h2>Gérer les catégories : </h2>
+    <p><a href="{{ path('ajoutCategorie')}}">Ajouter une catégorie</a></p>
+    <hr>
+    <h2>Les catégories déjà existantes : </h2>
+    {% if categories is empty %}       
+        <h3>---- Aucune catégorie n'a été trouvée ----</h3>       
+    {% endif%}
+    {% for categorie in categories %}
+        <p>{{ loop.index }} - {{ categorie.getLibelle()|title }} <a href='{{ path('modifierCategorie',{'id':categorie.id})}}'><img class="icone" src="{{ asset('img/modifier.jpg') }}" alt='bouton modifier'></a> <a href='{{ path('supprimerCategorie',{'id':categorie.id})}}'><img class="icone" src="{{ asset('img/supprimer.png') }}" alt='bouton supprimer'></a></p>
+    {% endfor %}
+{% endblock %}

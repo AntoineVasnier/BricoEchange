@@ -1,0 +1,35 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Accueil
+{% endblock %}
+
+{% block body %}
+    {% for categorie in categories %}
+        {% set compteur = 0 %}
+        <fieldset><legend style="color:#712164;font-weight: bold;"><a href="{{ path('annoncesParCateg',{'id' : categorie.id})}}">{{categorie.libelle()|upper}}</a></legend>
+        {% for annonce in annonces %}            
+            {% if annonce.categorie == categorie %}
+                <div class="post">
+                    <div class="annonce">
+                        <a href="{{ path('annonce', {'id' : annonce.id}) }}">
+                            <h3>{{annonce.datePublication|date('d/m/Y')}} : {{ annonce.resume|striptags }}</h3>
+                            <div class='columns'>
+                                <div class='column1'><img  src="{{ asset('bundles/tiberiademain/img/actus/' ~ annonce.photo) }}" alt="logo" /></div>
+                                <div class='column2'><p class="content">Marque : {{ annonce.marque|upper }}<br>Lieu : {{ annonce.ville|upper }}</p></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>   
+                {% set compteur = 1%}
+            {% endif %}
+        {% endfor %}
+        {% if compteur == 0 %}
+            <div class="postVide">
+                <h3>Aucune annonce dans cette catégorie.</h3>
+            </div>        
+        {% endif %}
+        </fieldset>
+    {% endfor%}
+    
+{% endblock %}

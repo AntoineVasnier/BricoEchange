@@ -1,0 +1,219 @@
+html {
+    background-color: white;
+}
+
+body {
+    text-align: center;
+    background-color: whitesmoke;
+    width: 800px;
+    margin: auto;
+    padding: 1%;
+}
+
+h1, h2, h3, a, p, div {
+    font-family: arial,sans-serif;
+    text-align: left;
+}
+
+h1, p.logo {
+    text-align: center;
+    color: #712164;
+    margin-top: 0;
+    padding-top: 15px;
+}
+
+hr {
+    margin-top: 20px;
+}
+
+p.logo {
+    margin-left: 300px;
+    margin-right: 20px;
+}
+
+div.clear {
+    clear: both;
+}
+
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left;
+    background-color: lightgray;
+}
+
+    ul.menu li {
+        display: block;
+        border-right: 1px solid #712164;
+        background-color: lightgrey;
+        padding: 0 10px;
+        float: left;
+    }
+
+    ul.menu li:hover {
+        background-color: #FAC699;
+    }
+
+        ul.menu li a,
+        ul.menu li a:hover,
+        ul.menu li a:active {
+            text-align: center;
+            display: block;
+            color: #712164;
+            text-decoration: none;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+div.header, div.body, div.footer {
+    
+}
+
+div#form {
+    margin-top: 30px;
+}
+
+    div#form .row {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+        div#form div.row div.label {
+            width: 25%;
+            float: left;
+        }
+
+        div#form div.row div.element input {
+            width: 40%;
+        }
+
+        div#form div.row div.element textarea {
+            width: 60%;
+            height: 150px;
+        }
+
+    div#form div button {
+        margin-left: 350px;
+        padding: 5px 10px;
+    }
+    .columns{
+        width: 100%;
+        float:left;
+    }
+    .column1{
+        width:30%;
+        width: 30%;
+        float:left;
+        
+    }
+    img{
+        width: 90%;
+    }
+div.post {
+    width: 97%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    float :left;
+}
+
+div.postVide {
+    width: 97%;
+    padding: 10px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    float :left;
+}
+div.postVide h3 {
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 0;
+        padding: 5px 0;
+        background-color: gray;
+        border-radius: 5px;
+    }
+    div.post a,
+    div.post a:hover,
+    div.post a:active {
+        color: black;
+        text-decoration: none;
+    }
+    
+    div.post h3{
+        color: white;
+    }
+    legend a{
+        color:#712164;
+    }
+    a h3{
+        color: white;
+    }
+    .icone{
+        width:16px;
+        height:16px;
+    }
+    div.post h3 {
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 0;
+        padding: 5px 0;
+        background-color: gray;
+        border-radius: 5px;
+    }
+    div.annonce {
+        width: 97%;
+        border: 1px solid gray;
+        margin:0;
+        padding: 10px;
+        border-radius: 5px;
+        float: left;
+    }
+    
+    div.annonce:hover {
+        opacity: 0.6;
+        border: 1px solid #712164;
+    }
+    
+    div.post hr {
+        margin: 0;
+    }
+
+    p.details {
+        text-align: right;
+        font-size: 14px;
+    }
+
+        p.details span.date {
+            font-weight: bold;
+        }
+
+        p.details a.author {
+            font-style: italic;
+        }
+
+    p.content {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+
+div.comment {
+    margin-bottom: 10px;
+}
+    div.comment p.title {
+        font-weight: bold;
+        font-size: 17px;
+    }
+
+    div.comment p.description {
+        font-size: 15px;
+    }
+
+div.footer {
+    padding: 40px 0 20 0;
+    text-align: center;
+    font-size: 12px;
+}

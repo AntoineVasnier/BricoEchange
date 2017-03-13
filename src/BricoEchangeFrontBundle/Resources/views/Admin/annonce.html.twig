@@ -1,0 +1,15 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Admin - Annonces
+{% endblock %}
+
+{% block body %}
+    <h2>Gérer les annonces : </h2>
+    {% if annonces is empty %}       
+        <h3>---- Aucune annonce n'a été trouvée ----</h3>       
+    {% endif%}
+    {% for annonce in annonces %}
+        <p>{{ loop.index }} - {{ annonce.getResume() }}  <a href='{{ path('modifierAnnonce',{'id':annonce.id})}}'><img class="icone" src="{{ asset('img/modifier.jpg') }}" alt='bouton modifier'></a> <a href='{{ path('supprimerAnnonce',{'id':annonce.id})}}'><img class="icone" src="{{ asset('img/supprimer.png') }}" alt='bouton supprimer'></a></p>
+    {% endfor %}
+{% endblock %}

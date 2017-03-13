@@ -1,0 +1,12 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Admin
+{% endblock %}
+
+{% block body %}
+    <h2>Panneau d'administration : </h2>
+    <p><a href="{{ path('categorie')}}">Gérer les catégories</a></p>
+    <p><a href="{{ path('admin_annonce')}}">Gérer les annonces</a></p>
+    <p><a href="{{ path('admin_utilisateur')}}">Gérer les utilisateurs</a></p>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'BricoEchangeFrontBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Admin - Utilisateurs
+{% endblock %}
+
+{% block body %}
+    <h2>Gérer les utilisateurs : </h2>
+    {% if utilisateurs is empty %}       
+        <h3>---- Aucun utilisateur n'a été trouvée ----</h3>       
+    {% endif%}
+    {% for utilisateur in utilisateurs %}
+        {% if utilisateur.role == 'admin'%}
+            <p>{{ loop.index }} - {{ utilisateur.username }}</p>
+        {% else %}
+            <p>{{ loop.index }} - {{ utilisateur.username }}  <a href='{{ path('modifierUtilisateur',{'id':utilisateur.id})}}'><img class="icone" src="{{ asset('img/modifier.jpg') }}" alt='bouton modifier'></a> <a href='{{ path('supprimerUtilisateur',{'id':utilisateur.id})}}'><img class="icone" src="{{ asset('img/supprimer.png') }}" alt='bouton supprimer'></a></p>
+        {% endif%}
+    {% endfor %}
+{% endblock %}
